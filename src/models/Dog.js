@@ -4,10 +4,11 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Dog', {
-    id:{
-      type: DataTypes.UUID,                  //tipo de dato codigo alfanumerico
+    id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4         //algoritmo para crear el codigo
+      autoIncrement: true,
+      defaultValue: Sequelize.literal('265'),
     },
     img: {
       type: DataTypes.STRING,
