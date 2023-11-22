@@ -8,7 +8,6 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      start: 265,
     },
     img: {
       type: DataTypes.STRING,
@@ -32,6 +31,9 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
 
-
-  });
+  },
+  {
+    initialAutoIncrement: 265,
+  }
+  );
 };
