@@ -1,15 +1,13 @@
 const { DataTypes } = require('sequelize');
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = (sequelize) => {
   sequelize.define('Dog', {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      defaultValue: () => uuidv4().replace(/-/g, '').substring(0, 4), 
       primaryKey: true,
-      autoIncrement: true,
-      get() {
-        const value = this.getDataValue('id');
-        return value != null ? String(value).padStart(4, '0') : null;
-      },
+      allowNull: false,
     },
     img: {
       type: DataTypes.STRING,
