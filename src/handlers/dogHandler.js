@@ -27,7 +27,7 @@ const getDogsHandler = async (req, res) => {
 
 const getDetailsDogsHandler = async (req, res) => {
     const {idRaza} = req.params;
-    console.log(idRaza)
+
     try {
         const response = (await getDogById(idRaza))
         if (response.error) throw Error (response.error)
